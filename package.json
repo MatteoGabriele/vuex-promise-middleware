@@ -22,14 +22,19 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/MatteoGabriele/vuex-promise-middleware"
   },
-  "keywords": [],
+  "keywords": [
+    "vuex",
+    "promise",
+    "middleware",
+    "plugin"
+  ],
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/MatteoGabriele/vuex-promise-middleware/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/MatteoGabriele/vuex-promise-middleware#readme",
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
