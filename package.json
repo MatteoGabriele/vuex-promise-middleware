@@ -1,6 +1,6 @@
 {
   "name": "vuex-promise-middleware",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Vuex promise state dispatcher",
   "main": "dist/vuex-promise-middleware.js",
   "scripts": {
