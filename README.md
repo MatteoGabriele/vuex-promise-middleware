@@ -22,8 +22,8 @@ Vue.use(Vuex)
 const plugins = [VuexPromiseMiddleware]
 
 export default new Vuex.Store({
-	plugins,
-	...
+  plugins,
+  ...
 })
 
 ```
@@ -40,9 +40,9 @@ In this example I will use a public api from https://opentdb.com which retrieves
 
 ```js
 export default {
-	questions: [],
-	pending: false,
-	error: null
+  questions: [],
+  pending: false,
+  error: null
 }
 ```
 ---
@@ -51,9 +51,9 @@ export default {
 
 ```js
 export default {
-	RETRIEVE: 'quiz/RETRIEVE',
-	RETRIEVE_SUCCEEDED: 'quiz/RETRIEVE_SUCCEEDED',
-	RETRIEVE_FAILED: 'quiz/RETRIEVE_FAILED'
+  RETRIEVE: 'quiz/RETRIEVE',
+  RETRIEVE_SUCCEEDED: 'quiz/RETRIEVE_SUCCEEDED',
+  RETRIEVE_FAILED: 'quiz/RETRIEVE_FAILED'
 }
 ```
 
@@ -66,12 +66,12 @@ import axios from 'axios' // for http requests
 import events from './events'
 
 export default {
-	[events.RETRIEVE] ({ commit }) {
-		const url = 'https://opentdb.com/api.hp?amount=10'
-		const request = axios.get(url)
-		
-		commit(events.RETRIEVE, request)
-	}
+  [events.RETRIEVE] ({ commit }) {
+    const url = 'https://opentdb.com/api.php?amount=10'
+    const request = axios.get(url)
+
+    commit(events.RETRIEVE, request)
+  }
 }
 
 ```
@@ -83,22 +83,22 @@ export default {
 import events from './events'
 
 export default {
-	[events.RETRIEVE] (state) {
-		state.pending = true
-		state.error = null
-	},
-	
-	[events.RETRIEVE_SUCCEEDED] (state, payload) {
-		state.questions = payload.data.results
-		state.pending = false
-		state.error = null
-	},
-	
-	[events.RETRIEVE_FAILED] (state, payload) {
-		state.pending = false
-		state.error = payload
-		state.questions = []
-	}
+  [events.RETRIEVE] (state) {
+    state.pending = true
+    state.error = null
+  },
+
+  [events.RETRIEVE_SUCCEEDED] (state, payload) {
+    state.questions = payload.data.results
+    state.pending = false
+    state.error = null
+  },
+
+  [events.RETRIEVE_FAILED] (state, payload) {
+    state.pending = false
+    state.error = payload
+    state.questions = []
+  }
 }
 
 ```
