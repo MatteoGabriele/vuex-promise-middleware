@@ -28,9 +28,14 @@ export default new Vuex.Store({
 
 ```
 
-In your actions make sure to pass a Promise in the payload and the middleware is going to fire two new events with the same name of your event with two suffix: `_SUCCEEDED` and `_FAILED`
+In your actions make sure to pass a Promise in the payload and the middleware is going to fire two new suffixed events with the same name of your event: `_SUCCEEDED` and `_FAILED`
 
 i.e. `GET_STUFF` will also fire `GET_STUFF_SUCCEEDED` and `GET_STUFF_FAILED`
+
+* `GET_STUFF` will be fired when the promise is in pending
+* `GET_STUFF_SUCCEEDED` will be fired when the promise is resolved
+* `GET_STUFF_FAILED` will be fired when the promise is rejected
+
 
 ### Example
 
