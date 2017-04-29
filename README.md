@@ -27,6 +27,11 @@ export default new Vuex.Store({
 })
 
 ```
+#
+
+**Very important to understand is that the hot module replacement works ONLY if the Vuex store is used with [modules](https://vuex.vuejs.org/en/modules.html)**
+
+#
 
 In your actions make sure to pass a Promise in the payload and the middleware is going to fire two new suffixed events with the same name of your event: `_SUCCEEDED` and `_FAILED`
 
