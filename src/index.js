@@ -1,4 +1,4 @@
-export default function vuexPromiseMiddleware (store) {
+export default (options = { snakecase: true }) => store => {
   store.subscribe((mutation, state) => {
     const isPromise = mutation.payload && mutation.payload.then
 
@@ -6,8 +6,11 @@ export default function vuexPromiseMiddleware (store) {
       return
     }
 
-    const succeded = `${mutation.type}_SUCCEEDED`
-    const failed = `${mutation.type}_FAILED`
+    const succededString = options.snakecase ? '_SUCCEEDED' : 'Succeeded'
+    const failedString = options.snakecase ? '_FAILED' : 'Failed'
+
+    const succeded = `${mutation.type}${succededString}`
+    const failed = `${mutation.type}${failedString}`
 
     store.hotUpdate({
       mutations: {
