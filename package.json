@@ -1,7 +1,7 @@
 {
   "name": "vuex-promise-middleware",
   "author": "Matteo Gabriele <matteo@blocklevel.nl>",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "bugs": {
     "url": "https://github.com/matteogabriele/vuex-promise-middleware/issues"
